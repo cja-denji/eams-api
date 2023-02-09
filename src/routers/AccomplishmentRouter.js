@@ -1,6 +1,5 @@
 // import express server module
 const express = require("express");
-const { locales } = require("validator/lib/isiban");
 // initialize this files as express router
 const router = new express.Router();
 // model
