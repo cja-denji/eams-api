@@ -26,7 +26,7 @@ router.get("/User/fetchUsers", async (req, res) => {
 
 // add user
 router.post("/User/addUser", async (req, res) => {
-  const user = new UserModel(JSON.parse(req.body));
+  const user = new UserModel(req.body);
 
   try {
     await user.save();
