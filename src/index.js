@@ -19,9 +19,9 @@ var corsOptions = {
 
 // register json and routers to express server`
 app.use(express.json()); // this enables the request body as json format
-app.use(cors(corsOptions));
 app.use(UserRouter);
 app.use(AccomplishmentRouter);
+app.use(cors(corsOptions));
 
 app.listen(port, () => {
   console.log("server is running on port " + port);
