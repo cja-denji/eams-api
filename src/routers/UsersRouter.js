@@ -1,10 +1,7 @@
 // import express server module
 const express = require("express");
-const cors = require('cors')
 // initialize this files as express router
 const router = new express.Router();
-
-router.use(cors());
 // model
 const UserModel = require("../models/UserModel");
 
