@@ -36,9 +36,16 @@ router.post("/User/addUser", async (req, res) => {
   }
 });
 
-router.post("/User/addUserTest", (req, res) => {
+router.post("/User/addUserTest", async (req, res) => {
   let data = req.body;
-  res.send(JSON.stringify(data));
+  var user = new UserModel(JSON.stringify(data));
+
+  try {
+    await user.save();
+    res.status(201).send(user);
+  } catch(e) {
+    res.status(400).send("unable to save new user!")
+  }
 })
 
 // retrieve user details
