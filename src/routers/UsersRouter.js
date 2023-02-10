@@ -38,8 +38,7 @@ router.post("/User/addUser", async (req, res) => {
 
 router.post("/User/addUserTest", (req, res) => {
   let data = req.body;
-
-  res.send("Data Recieved: " + JSON.stringify(data));
+  res.send(JSON.stringify(data));
 })
 
 // retrieve user details
