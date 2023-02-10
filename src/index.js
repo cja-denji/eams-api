@@ -1,5 +1,6 @@
 // import express server module
 const express = require("express");
+const cors = require('cors')
 // import db connection file
 require("./db/mongoose.js");
 
@@ -12,6 +13,7 @@ const port = process.env.PORT || 8080;
 
 // register json and routers to express server`
 app.use(express.json()); // this enables the request body as json format
+app.use(cors());
 app.use(UserRouter);
 app.use(AccomplishmentRouter);
 
