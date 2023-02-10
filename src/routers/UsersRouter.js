@@ -1,7 +1,16 @@
+const cors = require('cors')
 // import express server module
 const express = require("express");
 // initialize this files as express router
 const router = new express.Router();
+
+// cors configuration
+var corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+
 // model
 const UserModel = require("../models/UserModel");
 
@@ -36,7 +45,7 @@ router.post("/User/addUser", async (req, res) => {
   }
 });
 
-router.post("/User/addUserTest", async (req, res) => {
+router.post("/User/addUserTest", cors(corsOptions), async (req, res) => {
   let data = req.body;
   var user = new UserModel(JSON.stringify(data));
 
