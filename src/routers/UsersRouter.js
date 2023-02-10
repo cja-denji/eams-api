@@ -36,6 +36,12 @@ router.post("/User/addUser", async (req, res) => {
   }
 });
 
+router.post("/User/addUserTest", (req, res) => {
+  let data = req.body;
+
+  res.send("Data Recieved: " + JSON.stringify(data));
+})
+
 // retrieve user details
 router.get("/User/getUserDetails/:user_id", async (req, res) => {
   const _user_id = req.params.user_id;
